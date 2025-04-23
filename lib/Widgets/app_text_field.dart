@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_nti_task/utils/app_color.dart';
 
 class AppTextField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
@@ -52,6 +53,7 @@ class AppTextField extends StatelessWidget {
         errorBorder: AppBorderDecoration.formFieldDecoration(Colors.red),
         focusedErrorBorder: AppBorderDecoration.formFieldDecoration(Colors.red),
         hintText: hintText,
+        hintStyle: TextStyle(color: AppColors.grey),
         label: Text(labelText),
         fillColor: fillColor ?? Colors.white,
         filled: true,
