@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_nti_task/utils/app_color.dart';
 
 class AppElevatedButton extends StatelessWidget {
   final double? borderRadius;
@@ -10,6 +11,7 @@ class AppElevatedButton extends StatelessWidget {
   final String buttonText;
   final TextStyle? textStyle;
   final VoidCallback? onPressed;
+  final String? routeName;
 
   const AppElevatedButton({
     super.key,
@@ -19,6 +21,7 @@ class AppElevatedButton extends StatelessWidget {
     this.horizontalPadding,
     this.buttonHeight,
     this.buttonWidth,
+    this.routeName,
     required this.buttonText,
     required this.textStyle,
     required this.onPressed,
@@ -26,6 +29,7 @@ class AppElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return ElevatedButton(
       style: ButtonStyle(
         shape: WidgetStateProperty.all(
@@ -34,15 +38,16 @@ class AppElevatedButton extends StatelessWidget {
           ),
         ),
         backgroundColor:
-            WidgetStateProperty.all(backgroundColor ?? Colors.green),
+            WidgetStateProperty.all(backgroundColor ?? AppColors.primary),
         padding: WidgetStateProperty.all(
           EdgeInsets.symmetric(
-            vertical: verticalPadding ?? 15,
-            horizontal: horizontalPadding ?? 20,
+            vertical: verticalPadding ?? size.height * 0.02,
+            horizontal: horizontalPadding ?? size.width * 0.05,
           ),
         ),
         minimumSize: WidgetStateProperty.all(
-          Size(buttonWidth ?? double.infinity, buttonHeight ?? 50),
+          Size(buttonWidth ?? double.infinity,
+              buttonHeight ?? size.height * 0.07),
         ),
       ),
       onPressed: onPressed,

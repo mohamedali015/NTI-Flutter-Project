@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_nti_task/Screens/HomeScreens/empty_tasks_screen.dart';
+import 'package:flutter_nti_task/Screens/Profile/change_password_screen.dart';
+import 'package:flutter_nti_task/Screens/Login%20&%20register/register_screen.dart';
 import 'package:flutter_nti_task/Widgets/app_elevated_button.dart';
+import 'package:flutter_nti_task/Widgets/app_svg.dart';
 import 'package:flutter_nti_task/Widgets/app_text_field.dart';
 import 'package:flutter_nti_task/Widgets/have_account.dart';
+import 'package:flutter_nti_task/Widgets/main_application_image.dart';
+import 'package:flutter_nti_task/utils/app_assets.dart';
+import 'package:flutter_nti_task/utils/app_color.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String routeName = "LoginScreen";
@@ -16,29 +24,21 @@ class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+  bool rememberMe = false;
   bool obscureText = true;
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xFFF3F5F4),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              width: double.infinity,
-              height: 270,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Image.asset(
-                "lib/assets/image/PalestineFlag.png",
-                // width: double.infinity,
-                fit: BoxFit.fill,
-              ),
-            ),
+            MainApplicationImage(imagePath: AppAssets.mainImage),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              padding: EdgeInsets.symmetric(
+                  horizontal: size.width * 0.07, vertical: size.height * 0.02),
               child: Form(
                 key: formKey,
                 child: Column(
@@ -48,9 +48,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.w500,
-                            color: Colors.green)),
+                            color: AppColors.primary)),
                     SizedBox(
-                      height: 20,
+                      height: size.height * 0.018,
                     ),
                     AppTextField(
                       hintText: "Enter Username",
@@ -62,26 +62,27 @@ class _LoginScreenState extends State<LoginScreen> {
                         }
                         return null;
                       },
-                      prefixIcon: Icon(Icons.person),
+                      prefixIcon: AppSvg(imagePath: AppAssets.person),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: size.height * 0.016,
                     ),
                     AppTextField(
                       hintText: "Enter Password",
                       labelText: "Password",
                       controller: passwordController,
                       obscureText: obscureText,
-                      prefixIcon: Icon(Icons.vpn_key),
+                      prefixIcon: AppSvg(imagePath: AppAssets.password),
                       suffixIcon: InkWell(
                         onTap: () {
                           setState(() {
                             obscureText = !obscureText;
                           });
                         },
-                        child: Icon(obscureText
-                            ? Icons.lock_outlined
-                            : Icons.lock_open_outlined),
+                        child: AppSvg(
+                          imagePath:
+                              obscureText ? AppAssets.lock : AppAssets.unLock,
+                        ),
                       ),
                       validator: (value) {
                         if (value!.trim().isEmpty) {
@@ -91,24 +92,47 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                     ),
                     SizedBox(
-                      height: 20,
+                      height: size.height * 0.016,
                     ),
+                    // Row(
+                    //   children: [
+                    //     Checkbox(
+                    //         value: rememberMe,
+                    //         onChanged: (value) {
+                    //           setState(() {
+                    //             rememberMe = value!;
+                    //           });
+                    //         }),
+                    //     Text("Remember Me"),
+                    //     Spacer(),
+                    //     HaveAccount(
+                    //         buttonText: "Forgot Password",
+                    //         routeName: ForgetPasswordScreen.routeName)
+                    //   ],
+                    // ),
+                    // SizedBox(
+                    //   height: size.height * 0.016,
+                    // ),
                     AppElevatedButton(
                       buttonText: "Login",
-                      textStyle: TextStyle(fontSize: 20, color: Colors.white),
+                      textStyle:
+                          TextStyle(fontSize: 20, color: AppColors.white),
                       onPressed: () {
                         if (!formKey.currentState!.validate()) {
                           return;
                         }
-                        print(usernameController.text);
-                        print(passwordController.text);
+                        Navigator.pushNamedAndRemoveUntil(context,
+                            EmptyTasksScreen.routeName, (route) => false);
                       },
                     ),
                     SizedBox(
-                      height: 20,
+                      height: size.height * 0.018,
                     ),
                     HaveAccount(
-                        text: "Don’t Have An Account?", buttonText: "Register")
+                      text: "Don’t Have An Account?",
+                      buttonText: "Register",
+                      routeName: RegisterScreen.routeName,
+                    )
                   ],
                 ),
               ),
