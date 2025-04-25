@@ -60,13 +60,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/assets/image/
+    - assets/image/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
-  # For details regarding adding assets from package dependencies, see
+  # For details regarding adding asssets from package dependencies, see
   # https://flutter.dev/to/asset-from-package
 
   # To add custom fonts to your application, add a fonts section here,
@@ -77,23 +77,23 @@ flutter:
   fonts:
     - family: "Lexend Deca"
       fonts:
-        - asset: lib/assets/Fonts/Lexend Deca/LexendDeca-Black.ttf
+        - asset: assets/Fonts/Lexend Deca/LexendDeca-Black.ttf
           weight: 900
-        - asset: lib/assets/Fonts/Lexend Deca/LexendDeca-Bold.ttf
+        - asset: assets/Fonts/Lexend Deca/LexendDeca-Bold.ttf
           weight: 700
-        - asset: lib/assets/Fonts/Lexend Deca/LexendDeca-ExtraBold.ttf
+        - asset: assets/Fonts/Lexend Deca/LexendDeca-ExtraBold.ttf
           weight: 800
-        - asset: lib/assets/Fonts/Lexend Deca/LexendDeca-ExtraLight.ttf
+        - asset: assets/Fonts/Lexend Deca/LexendDeca-ExtraLight.ttf
           weight: 200
-        - asset: lib/assets/Fonts/Lexend Deca/LexendDeca-Light.ttf
+        - asset: assets/Fonts/Lexend Deca/LexendDeca-Light.ttf
           weight: 300
-        - asset: lib/assets/Fonts/Lexend Deca/LexendDeca-Medium.ttf
+        - asset: assets/Fonts/Lexend Deca/LexendDeca-Medium.ttf
           weight: 500
-        - asset: lib/assets/Fonts/Lexend Deca/LexendDeca-Regular.ttf
+        - asset: assets/Fonts/Lexend Deca/LexendDeca-Regular.ttf
           weight: 400
-        - asset: lib/assets/Fonts/Lexend Deca/LexendDeca-SemiBold.ttf
+        - asset: assets/Fonts/Lexend Deca/LexendDeca-SemiBold.ttf
           weight: 600
-        - asset: lib/assets/Fonts/Lexend Deca/LexendDeca-Thin.ttf
+        - asset: assets/Fonts/Lexend Deca/LexendDeca-Thin.ttf
           weight: 100
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
