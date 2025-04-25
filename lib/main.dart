@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_nti_task/Screens/HomeScreens/add_task_screen.dart';
-import 'package:flutter_nti_task/Screens/HomeScreens/empty_tasks_screen.dart';
-import 'package:flutter_nti_task/Screens/HomeScreens/task_screen.dart';
-import 'package:flutter_nti_task/Screens/Profile/change_password_screen.dart';
-import 'package:flutter_nti_task/Screens/Login%20&%20register/login_screen.dart';
-import 'package:flutter_nti_task/Screens/Login%20&%20register/register_screen.dart';
-import 'package:flutter_nti_task/Screens/Profile/home_profile_screen.dart';
-import 'package:flutter_nti_task/Screens/Profile/setting_screen.dart';
-import 'package:flutter_nti_task/Screens/Profile/update_profile_screen.dart';
-import 'package:flutter_nti_task/Screens/SplashScreen/splash_screen.dart';
-import 'package:flutter_nti_task/Screens/welcome_screen.dart';
-import 'package:flutter_nti_task/utils/app_theme.dart';
+import 'package:flutter_nti_task/Core/utils/app_theme.dart';
+import 'package:flutter_nti_task/Features/Home/View/empty_tasks_screen.dart';
+import 'package:flutter_nti_task/Features/Profile/View/change_password_screen.dart';
+import 'package:flutter_nti_task/Features/Auth/View/login_screen.dart';
+import 'package:flutter_nti_task/Features/Auth/View/register_screen.dart';
+import 'package:flutter_nti_task/Features/Profile/View/home_profile_screen.dart';
+import 'package:flutter_nti_task/Features/Splash%20&%20Welcome/View/splash_screen.dart';
+import 'package:flutter_nti_task/Features/Splash%20&%20Welcome/View/welcome_screen.dart';
+
+import 'Features/Home/View/add_task_screen.dart';
+import 'Features/Home/View/task_screen.dart';
+import 'Features/Profile/View/setting_screen.dart';
+import 'Features/Profile/View/update_profile_screen.dart';
 
 void main() {
   runApp(MyApp());
